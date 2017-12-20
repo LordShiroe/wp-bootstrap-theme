@@ -1,0 +1,410 @@
+/*
+Theme Name: SistemasBootstrap
+Theme URI: #
+Author: Carlos Angarita
+Author URI: github.com/LordShiroe
+Description: Tema para el programa de ingeniería de sistemas de la Universidad de Pamplona, Colombia.
+Version: 1.0
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Text Domain: sistemasbootstrap
+Tags: one-column, two-columns, right-sidebar, flexible-header, accessibility-ready, custom-colors, custom-header, custom-menu, custom-logo, editor-style, featured-images, footer-widgets, post-formats, rtl-language-support, sticky-post, theme-options, threaded-comments, translation-ready
+This theme, like WordPress, is licensed under the GPL.
+Use it to make something cool, have fun, and share what you've learned with others.
+*/
+
+/*
+ * Globals
+ */
+
+@media (min-width: 48em) {
+  html {
+    font-size: 18px;
+  }
+}
+
+body {
+  font-family: Georgia, "Times New Roman", Times, serif;
+  color: #555;
+}
+a {
+  text-decoration: none !important;
+}
+
+h1,
+.h1,
+h2,
+.h2,
+h3,
+.h3,
+h4,
+.h4,
+h5,
+.h5,
+h6,
+.h6 {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-weight: normal;
+  color: #333;
+}
+
+/*
+   * Override Bootstrap's default container.
+   */
+
+.container {
+  max-width: 60rem;
+}
+
+/*
+   * Masthead for nav
+   */
+
+.blog-masthead {
+  color: #f4f4f4;
+  background-color: #006699;
+  -webkit-box-shadow: inset 0 -0.1rem 0.25rem rgba(0, 0, 0, 0.1);
+  box-shadow: inset 0 -0.1rem 0.25rem rgba(0, 0, 0, 0.1);
+}
+.blog-masthead h1 {
+  font-size: 1rem;
+  font-weight: bold;
+  display: inline-block;
+  color: inherit;
+  margin-top: 1rem;
+}
+
+.blog-masthead h1 > small {
+  text-shadow: 0 2px 2px #333;
+  font-weight: inherit;
+}
+
+.navbar,
+.navbar-brand {
+  padding: 0 !important;
+}
+
+#navbarCollapse {
+  line-height: 2 !important;
+}
+/* Nav links */
+.nav-link {
+  position: relative;
+  padding: 1rem;
+  font-weight: 500;
+  color: #cdddeb;
+}
+.nav-link a:hover,
+.nav-link a:focus {
+  color: #fff;
+  background-color: transparent;
+}
+.nav-item a {
+  color: #cdddeb;
+  text-decoration: none;
+}
+
+.pages-container .nav-link a:hover,
+.nav-link a:focus {
+  color: #006699;
+  background-color: transparent;
+}
+.pages-container .nav-item a {
+  color: #555;
+  text-decoration: none;
+}
+
+.nav-item > a > i {
+  vertical-align: middle;
+}
+
+/* Active state gets a caret at the bottom */
+.nav-link.active a {
+  color: #fff !important;
+}
+.pages-container .nav-link.active a {
+  color: #ad3333 !important;
+}
+.nav-link.active:after {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  width: 0;
+  height: 0;
+  margin-left: -0.3rem;
+  vertical-align: middle;
+  content: "";
+  border-right: 0.3rem solid transparent;
+  border-bottom: 0.3rem solid;
+  border-left: 0.3rem solid transparent;
+}
+
+/*
+   * Blog name and description
+   */
+
+.blog-header {
+  padding-bottom: 1.25rem;
+  margin-bottom: 2rem;
+  border-bottom: 0.05rem solid #eee;
+}
+.blog-title {
+  margin-bottom: 0;
+  font-size: 2rem;
+  font-weight: normal;
+}
+.blog-description {
+  font-size: 1.1rem;
+  color: #999;
+}
+
+@media (min-width: 40em) {
+  .blog-title {
+    font-size: 3.5rem;
+  }
+}
+
+/*
+   * Main column and sidebar layout
+   */
+
+/* Sidebar modules for boxing content */
+.sidebar-module {
+  padding: 1rem;
+  /*margin: 0 -1rem 1rem;*/
+}
+.sidebar-module-inset {
+  padding: 1rem;
+  background-color: #f5f5f5;
+  border-radius: 0.25rem;
+}
+.sidebar-module-inset p:last-child,
+.sidebar-module-inset ul:last-child,
+.sidebar-module-inset ol:last-child {
+  margin-bottom: 0;
+}
+
+#calendar {
+  font-size: 12px;
+}
+
+/* Pagination */
+.blog-pagination {
+  margin-bottom: 4rem;
+}
+.blog-pagination > .btn {
+  border-radius: 2rem;
+}
+
+/*
+   * Blog posts
+   */
+
+.blog-post {
+  margin-bottom: 4rem;
+}
+.blog-post-title {
+  margin-bottom: 0.25rem;
+  font-size: 2.5rem;
+}
+.blog-post-meta {
+  margin-bottom: 1.25rem;
+  color: #999;
+}
+.post-thumbnail img {
+  width: 100%;
+  height: auto;
+  margin-bottom: 10px;
+}
+
+/*
+   * Footer
+   */
+
+.blog-footer {
+  padding: 2.5rem 0;
+  color: #f4f4f4;
+  font-size: 12px;
+  text-align: left;
+  background-color: #ad3333;
+  border-top: 0.05rem solid #e5e5e5;
+}
+.blog-footer p {
+  text-align: center;
+}
+.blog-footer p:last-child {
+  margin-bottom: 0;
+}
+
+.blog-footer a {
+  color: #f4f4f4;
+  text-decoration: none;
+}
+
+.blog-footer a:hover {
+  color: #006699;
+  text-decoration: none;
+}
+
+.comments {
+  border: 1px gray solid;
+  padding: 10px;
+  margin-bottom: 20px;
+  margin-top: 10;
+}
+
+.comments li {
+  list-style-type: none;
+}
+
+.comments h3,
+.comments h2 {
+  background: lightgray;
+  color: #333;
+  padding: 5px;
+}
+
+.comment-body {
+  border: lightgray solid 1px;
+  margin-bottom: 10px;
+  padding: 20px 10px;
+}
+
+.comment-meta {
+  background: lightgray;
+  color: white;
+  padding: 10px;
+  overflow: auto;
+}
+
+.comment-meta img {
+  float: left;
+  margin-right: 10px;
+}
+
+.comment-reply-link {
+  background: #428bca;
+  color: white;
+  display: inline-block;
+  padding: 10px 15px;
+}
+
+.commenr-form input,
+.comment-form textarea {
+  width: 100%;
+  padding: 4px;
+  border: lightgray solid 1px;
+  margin-bottom: 15px;
+}
+
+.pagination {
+  clear: both;
+  padding: 20px 0;
+  position: relative;
+  font-size: 11px;
+  line-height: 13px;
+}
+
+.pagination span,
+.pagination a {
+  display: block;
+  float: left;
+  margin: 2px 2px 2px 0;
+  padding: 6px 9px 5px 9px;
+  text-decoration: none;
+  width: auto;
+  color: #fff;
+  background: #555;
+}
+
+.pagination a:hover {
+  color: #fff;
+  background: #3279bb;
+}
+
+.pagination .current {
+  padding: 6px 9px 5px 9px;
+  background: #3279bb;
+  color: #fff;
+}
+
+/*
+   * Iconos 
+   */
+
+@font-face {
+  font-family: "untitled-font-1";
+  src: url("./fonts/untitled-font-1.eot");
+  src: url("./fonts/untitled-font-1.eot?#iefix") format("embedded-opentype"),
+    url("./fonts/untitled-font-1.woff") format("woff"),
+    url("./fonts/untitled-font-1.ttf") format("truetype"),
+    url("./fonts/untitled-font-1.svg#untitled-font-1") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+
+[data-icon]:before {
+  font-family: "untitled-font-1" !important;
+  content: attr(data-icon);
+  font-style: normal !important;
+  font-weight: normal !important;
+  font-variant: normal !important;
+  text-transform: none !important;
+  speak: none;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+[class^="icon-"]:before,
+[class*=" icon-"]:before {
+  font-family: "untitled-font-1" !important;
+  font-style: normal !important;
+  font-weight: normal !important;
+  font-variant: normal !important;
+  text-transform: none !important;
+  speak: none;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-envelope:before {
+  content: "\61";
+}
+.icon-home-1:before {
+  content: "\62";
+}
+.icon-home:before {
+  content: "\63";
+}
+.icon-key:before {
+  content: "\64";
+}
+.icon-facebook-official:before {
+  content: "\65";
+}
+.icon-facebook:before {
+  content: "\66";
+}
+.icon-facebook-square:before {
+  content: "\67";
+}
+.icon-book:before {
+  content: "\68";
+}
+.icon-book-1:before {
+  content: "\69";
+}
+.icon-torsos:before {
+  content: "\6a";
+}
+.icon-address-book:before {
+  content: "\6b";
+}
+.icon-bars:before {
+  content: "\6c";
+}
+.icon-git-branch:before {
+  content: "\6e";
+}
