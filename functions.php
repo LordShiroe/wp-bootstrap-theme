@@ -10,17 +10,18 @@ if ( ! file_exists( get_template_directory() . '/wp-bootstrap-navwalker.php' ) )
 }
 
 //Soporte para el tema
-/*
+/*try{ //Activar solo una vez.
+if (isset($_GET['activated']) && is_admin()){
 $menu = 'Principal';
 $menu_exists = wp_get_nav_menu_object( $menu );
 // Set up default menu items
-if(!$menu_exists){
+if($menu_exists==false){
     $menu_id = wp_create_nav_menu($menu);
     wp_update_nav_menu_item($menu_id, 0, array(
         'menu-item-title' =>  __('<i class="icon-home"></i> Inicio'),
         'menu-item-classes' => 'nav-item nav-link',
         'menu-item-url' => home_url( '/' ), 
-        'menu-item-status' => 'publish'));
+        'menu-item-status' => 'pub  lish'));
 
     wp_update_nav_menu_item($menu_id, 0, array(
         'menu-item-title' =>  __('<i class="icon-envelope"></i> Correo'),
@@ -46,55 +47,16 @@ if(!$menu_exists){
         'menu-item-url' => 'http://vortal.unipamplona.edu.co/unipamplona/hermesoft/vortal/iniciarSesion.jsp', 
         'menu-item-status' => 'publish')); 
 }
-$menu_secundario = 'Secundario';
-$menu_exists_secondary = wp_get_nav_menu_object( $menu_secundario );
 
-if(!$menu_exists_secondary){
-    $menu_id_secondary = wp_create_nav_menu($menu_secundario);
-    wp_update_nav_menu_item($menu_id_secondary, 0, array(
-        'menu-item-title' =>  __('El Programa'),
-        'menu-item-classes' => 'nav-item nav-link',
-        'menu-item-url' => home_url( '/programa'), 
-        'menu-item-status' => 'publish'));
-
-    wp_update_nav_menu_item($menu_id_secondary, 0, array(
-        'menu-item-title' =>  __('Investigación'),
-        'menu-item-classes' => 'nav-item nav-link',
-        'menu-item-url' => home_url( '/investigacion'), 
-        'menu-item-status' => 'publish'));
-
-    wp_update_nav_menu_item($menu_id_secondary, 0, array(
-        'menu-item-title' =>  __('Comité de Programa'),
-        'menu-item-classes' => 'nav-item nav-link',
-        'menu-item-url' => home_url( '/social' ), 
-        'menu-item-status' => 'publish'));    
-
-    wp_update_nav_menu_item($menu_id_secondary, 0, array(
-        'menu-item-title' =>  __('Profesorado'),
-        'menu-item-classes' => 'nav-item nav-link',
-        'menu-item-url' => home_url( '/profesores'), 
-        'menu-item-status' => 'publish'));
-
-    wp_update_nav_menu_item($menu_id_secondary, 0, array(
-        'menu-item-title' =>  __('Trabajos de Grado'),
-        'menu-item-classes' => 'nav-item nav-link',
-        'menu-item-url' => home_url( '/grado'), 
-        'menu-item-status' => 'publish')); 
-
-    wp_update_nav_menu_item($menu_id_secondary, 0, array(
-        'menu-item-title' =>  __('Egresados'),
-        'menu-item-classes' => 'nav-item nav-link',
-        'menu-item-url' => home_url( '/egresados'), 
-        'menu-item-status' => 'publish')); 
-
-    wp_update_nav_menu_item($menu_id_secondary, 0, array(
-        'menu-item-title' =>  __('Acreditación'),
-        'menu-item-classes' => 'nav-item nav-link',
-        'menu-item-url' => home_url( '/acreditacion'), 
-        'menu-item-status' => 'publish')); 
+    $menu_secundario = 'Secundario';
+    $menu_exists_secondary = wp_get_nav_menu_object( $menu_secundario );
+    if($menu_exists_secondary==false){
+        $menu_id_secondary = wp_create_nav_menu($menu_secundario);
+    }
 }
-*/
-
+}catch(Exception $e){
+    echo 'Excepción capturada: ',  $e->getMessage(), "\n";
+}*/
 
 function wpb_theme_setup(){
     //Theme support
@@ -294,6 +256,26 @@ if (isset($_GET['activated']) && is_admin()){
     );
     if(!isset($blog_page_check->ID) && !the_slug_exists('acreditacion')){
         $blog_page_id = wp_insert_post($blog_page);
+    }
+}
+
+//Crea página de Acreditación
+if (isset($_GET['activated']) && is_admin()){
+    $blog_page_title = 'Social';
+    $blog_page_content = 'This is blog page placeholder. Anything you enter here will not appear in the front end, except for search results pages.';
+    $blog_page_check = get_page_by_title($blog_page_title);
+    $blog_page = array(
+	    'post_type' => 'page',
+	    'post_title' => $blog_page_title,
+	    'post_content' => $blog_page_content,
+	    'post_status' => 'publish',
+	    'post_author' => 1,
+	    'post_slug' => 'social'
+    );
+    if(!isset($blog_page_check->ID) && !the_slug_exists('social')){
+        $blog_page_id = wp_insert_post($blog_page);
+        echo ("La pagina se creo");
+        echo($blog_page_id);
     }
 }
 

@@ -88,33 +88,33 @@ h6,
   line-height: 2 !important;
 }
 /* Nav links */
-.nav-link {
+.menu-item, .nav-link {
   position: relative;
   padding: 1rem;
   font-weight: 500;
   color: #cdddeb;
 }
-.nav-link a:hover,
+.menu-item a:hover, .menu-item a:focus, .nav-link a:hover,
 .nav-link a:focus {
   color: #fff;
   background-color: transparent;
 }
-.nav-item a {
+.menu-item, .nav-item a {
   color: #cdddeb;
   text-decoration: none;
 }
 
-.pages-container .nav-link a:hover,
-.nav-link a:focus {
+.pages-container .menu-item  a:hover, .nav-link a:hover,
+.menu-item a:focus, .nav-link a:focus {
   color: #006699;
   background-color: transparent;
 }
-.pages-container .nav-item a {
+.pages-container .menu-item  a, .nav-item a {
   color: #555;
   text-decoration: none;
 }
 
-.nav-item > a > i {
+.menu-item,.nav-item > a > i {
   vertical-align: middle;
 }
 

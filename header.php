@@ -20,7 +20,7 @@
     <div class="blog-masthead">
         <nav class="navbar navbar-expand-sm">
             <div class="container">
-                <a href="<?php  bloginfo('home')?>" class="navbar-brand text-light"><img src="<?php bloginfo('template_url')?>/img/logo.png" width="60" class="d-inline-block align-top mr-2" alt="">
+                <a href="<?php  bloginfo('url')?>" class="navbar-brand text-light"><img src="<?php bloginfo('template_url')?>/img/logo.png" width="60" class="d-inline-block align-top mr-2" alt="">
                     <h1 class="align-middle">INGENIERÍA DE SISTEMAS
                         <br>
                         <small>PAMPLONA - VILLA DEL ROSARIO</small>
