@@ -1,11 +1,4 @@
 <?php get_header()?>
-
-    <div style="background:#333; text-align:center" >
-    <?php
-    if ( function_exists( 'soliloquy' ) ) { soliloquy( 'main-slider', 'slug' ); }
-?>
-    </div>
-
     <nav class="navbar navbar-expand-sm navbar-light bg-light">
         <div class="container">
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSecondary" aria-controls="navbarSecondary"
