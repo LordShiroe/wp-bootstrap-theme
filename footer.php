@@ -17,31 +17,51 @@
             <div class="row">
                 <div class="col-md-4 col-sm-4 col-xs-12">
                     <h3 class="font-weight-bold">Documentos</h3>
-                    <ul class="list-unstyled align-middle">
-                        <li><a target="_blank" href="http://www.unipamplona.edu.co/unipamplona/portalIG/home_1/recursos/universidad/consejo_academico/acuerdos/2017/junio/23062017/acuerdo_051.pdf">Calendario Academico</a></li>
-                        <li><a target="_blank" href="http://www.unipamplona.edu.co/unipamplona/portalIG/home_1/recursos/universidad/consejo_superior/acuerdos/2014/febrero/17022014/reglamento_academico_pregrado.pdf">Reglamento Estudiantil</a></li>
-                        <li><a target="_blank" href="http://www.unipamplona.edu.co/unipamplona/portalIG/home_9/recursos/general/documentos/circular/22052013/acuerdo_130.pdf">Estatuto Docente</a></li>
-                    </ul>
+                    <?php
+                    wp_nav_menu( array(
+                        'menu'              => 'Footer1',
+                        'theme_location'    => 'footer',
+                        'depth'             => 2,
+                        'container'         => 'div',
+                        'container_class'   => 'menu-footer',
+                        'container_id'      => 'footer-1',
+                        'menu_class'        => 'list-unstyled align-middle',
+                        'fallback_cb'       => 'WP_Bootstrap_Navwalker::fallback',
+                        'walker'            => new WP_Bootstrap_Navwalker())
+                    ); 
+                    ?>
                 </div>
                 <div class="col-md-4 col-sm-4 col-xs-12">
                     <h3 class="font-weight-bold">Sitios de Interés</h3>
-                    <ul class="list-unstyled align-middle">
-                        <li><a target="_blank" href="http://www.unipamplona.edu.co/unipamplona/portalIG/home_21/recursos/bienestar2014/04042014/servicios.jsp">Servicios de Bienestar</a></li>
-                        <li><a target="_blank" href="http://www.unipamplona.edu.co/unipamplona/portalIG/home_77/recursos/01general/04082014/asociaciones.jsp">Asociaciones</a></li>
-                        <li><a target="_blank" href="http://www.unipamplona.edu.co/unipamplona/portalIG/home_77/recursos/01general/04082014/revistas.jsp">Revistas Científicas</a></li>
-                        <li><a target="_blank" href="http://www.unipamplona.edu.co/unipamplona/portalIG/home_13/recursos/01_general/23112009/mapa_de_procesos.jsp">Documentos SIG</a></li>
-                        <li><a target="_blank" href="http://www.unipamplona.edu.co/unipamplona/portalIG/home_1/recursos/corporativo/15022011/descargas_unipamplona.jsp">Imagen Institucional</a></li>
-                        <li><a target="_blank" href="http://www.unipamplona.edu.co/unipamplona/portalIG/home_77/recursos/01general/25072013/admin.jsp">Contacto</a></li>
-                    </ul>
+                    <?php
+                    wp_nav_menu( array(
+                        'menu'              => 'Footer2',
+                        'theme_location'    => 'footer',
+                        'depth'             => 2,
+                        'container'         => 'div',
+                        'container_class'   => 'menu-footer',
+                        'container_id'      => 'footer-2',
+                        'menu_class'        => 'list-unstyled align-middle',
+                        'fallback_cb'       => 'WP_Bootstrap_Navwalker::fallback',
+                        'walker'            => new WP_Bootstrap_Navwalker())
+                    ); 
+                    ?>
                 </div>
                 <div class="col-md-4 col-sm-4 col-xs-12">
                     <h3 class="font-weight-bold">Entidades Relacionadas</h3>
-                    <ul class="list-unstyled align-middle">
-                        <li><a target="_blank" href="http://www.sena.edu.co/es-co/Paginas/default.aspx">SENA</a></li>
-                        <li><a target="_blank" href="http://www.colciencias.gov.co/">COLCIENCIAS</a></li>
-                        <li><a target="_blank" href="https://portal.icetex.gov.co/portal">Icetex</a></li>
-                        <li><a target="_blank" href="http://www.unipamplona.edu.co">Universidad de Pamplona</a></li>
-                    </ul>
+                    <?php
+                    wp_nav_menu( array(
+                        'menu'              => 'Footer3',
+                        'theme_location'    => 'footer',
+                        'depth'             => 2,
+                        'container'         => 'div',
+                        'container_class'   => 'menu-footer',
+                        'container_id'      => 'footer-3',
+                        'menu_class'        => 'list-unstyled align-middle',
+                        'fallback_cb'       => 'WP_Bootstrap_Navwalker::fallback',
+                        'walker'            => new WP_Bootstrap_Navwalker())
+                    ); 
+                    ?>
                 </div>
             </div>
 
@@ -51,12 +71,13 @@
             </p>
         </div>
     </footer>
-    <?php wp_footer()?>
 
 
-    <script src="<?php bloginfo('template_url');?>/js/jquery-slim.min.js"></script>
+
+    <script src="<?php bloginfo('template_url');?>/js/jquery-3.2.1.min.js"></script>
     <script src="<?php bloginfo('template_url');?>/js/popper.min.js"></script>
     <script src="<?php bloginfo('template_url');?>/js/bootstrap.min.js"></script>
+    <?php wp_footer()?>
 </body>
 
 </html>

@@ -58,13 +58,34 @@ if($menu_exists==false){
     echo 'Excepción capturada: ',  $e->getMessage(), "\n";
 }*/
 
+$menu_footer = 'Footer1';
+$menu_exists_footer = wp_get_nav_menu_object( $menu_footer );
+if($menu_exists_footer==false){
+    $menu_id_secondary = wp_create_nav_menu($menu_footer);
+}
+
+$menu_footer = 'Footer2';
+$menu_exists_footer = wp_get_nav_menu_object( $menu_footer );
+if($menu_exists_footer==false){
+    $menu_id_secondary = wp_create_nav_menu($menu_footer);
+}
+
+$menu_footer = 'Footer3';
+$menu_exists_footer = wp_get_nav_menu_object( $menu_footer );
+if($menu_exists_footer==false){
+    $menu_id_secondary = wp_create_nav_menu($menu_footer);
+}
+
 function wpb_theme_setup(){
     //Theme support
     add_theme_support('post-tumbnails');
     //Menú de navegación
     register_nav_menus(array(
         'primary'=>__('Principal','SistemasBootstrap'),
-        'pages'=>__('Secundario','SistemasBootstrap')
+        'pages'=>__('Secundario','SistemasBootstrap'),
+        'footer'=>__('Footer1','SistemasBootstrap'),
+        'footer'=>__('Footer2','SistemasBootstrap'),
+        'footer'=>__('Footer3','SistemasBootstrap')
     ));
 }
 
@@ -259,7 +280,7 @@ if (isset($_GET['activated']) && is_admin()){
     }
 }
 
-//Crea página de Acreditación
+//Crea página de Social
 if (isset($_GET['activated']) && is_admin()){
     $blog_page_title = 'Social';
     $blog_page_content = 'This is blog page placeholder. Anything you enter here will not appear in the front end, except for search results pages.';

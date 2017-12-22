@@ -46,3 +46,8 @@
             </div>
         </nav>
     </div>
+    <div style="background:#333; text-align:center" >
+    <?php
+        if ( function_exists( 'soliloquy' ) ) { soliloquy( 'main-slider', 'slug' ); }
+    ?>
+    </div>

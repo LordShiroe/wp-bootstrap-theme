@@ -88,33 +88,41 @@ h6,
   line-height: 2 !important;
 }
 /* Nav links */
-.menu-item, .nav-link {
+.menu-item,
+.nav-link {
   position: relative;
   padding: 1rem;
   font-weight: 500;
   color: #cdddeb;
 }
-.menu-item a:hover, .menu-item a:focus, .nav-link a:hover,
+.menu-item a:hover,
+.menu-item a:focus,
+.nav-link a:hover,
 .nav-link a:focus {
   color: #fff;
   background-color: transparent;
 }
-.menu-item, .nav-item a {
+.menu-item,
+.nav-item a {
   color: #cdddeb;
   text-decoration: none;
 }
 
-.pages-container .menu-item  a:hover, .nav-link a:hover,
-.menu-item a:focus, .nav-link a:focus {
+.pages-container .menu-item a:hover,
+.nav-link a:hover,
+.menu-item a:focus,
+.nav-link a:focus {
   color: #006699;
   background-color: transparent;
 }
-.pages-container .menu-item  a, .nav-item a {
+.pages-container .menu-item a,
+.nav-item a {
   color: #555;
   text-decoration: none;
 }
 
-.menu-item,.nav-item > a > i {
+.menu-item,
+.nav-item > a > i {
   vertical-align: middle;
 }
 
@@ -326,6 +334,15 @@ h6,
   padding: 6px 9px 5px 9px;
   background: #3279bb;
   color: #fff;
+}
+
+.soliloquy-container {
+  display: table !important;
+  margin: 0 auto !important;
+}
+
+.menu-footer .menu-item {
+  padding: 0px !important;
 }
 
 /*

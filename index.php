@@ -1,6 +1,9 @@
 <?php get_header()?>
 
-    <div style="height:300px; background:#333;">
+    <div style="background:#333; text-align:center" >
+    <?php
+    if ( function_exists( 'soliloquy' ) ) { soliloquy( 'main-slider', 'slug' ); }
+?>
     </div>
 
     <nav class="navbar navbar-expand-sm navbar-light bg-light">
